@@ -1,0 +1,829 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Detail - Scholarship Entrance Examination (SEE)</title>
+    <link href="/Content/css?v=6hiULMlNwKuxr0P2Ye9Q7QUK0YoUxIyG-1WCeiyW1D81" rel="stylesheet"/>
+
+    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <!-- Date Picker-->
+    <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style>
+        .wrapper {
+            padding: 0px;
+        }
+
+        .wrapper-content {
+            padding: 0px 0px;
+        }
+
+        .top-navigation .wrapper.wrapper-content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="top-navigation">
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <div class="wrapper wrapper-content">
+                <div class="container">
+                    <div class="col-xs-12 wrapper border-bottom white-bg page-heading">
+                        <div class="wrapper border-bottom white-bg page-heading">
+
+                            <div class="text-center col-md-2 col-sm-12">
+                                <img src="/assets/img/logo.png" style="max-height: 110px">
+                            </div>
+                            <div class="col-md-8 col-sm-12" style="text-align:center">
+                                <h2 style="margin-top: 15px;"> 
+<span>Kathmandu Metropolitan City</span>
+</h2>
+                                <h1 style="margin-top: 10px;">
+<span><b>Office of Municipal Executive, Bagmati Province</b></span>
+</h1>
+                                <h3 style="">
+Kathmandu, Nepal
+</h3>
+                            </div>
+                            <div class="text-center col-md-2 col-sm-12">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 wrapper border-bottom white-bg page-heading">
+                        <nav class="navbar navbar-static-top" role="navigation">
+                            <div class="navbar-header">
+                                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                    <i class="fa fa-reorder"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse" id="navbar" style="background-color:#171c45">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/">Home</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li><a target="_blank" href="/Download?fileName=community_school.pdf">Community School Format</a></li>
+     				  <li><a target="_blank" href="/Download?fileName=privatescholar.pdf">Private School (Scholarship)</a></li>
+                                    
+                                    
+                                </ul>
+                                <ul class="nav navbar-right">
+                                    <li class="dropdown">
+                                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> About <span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                            <li><a href="/AboutUs"><i class="fa fa-building"></i> About Us</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+
+                    </div>
+                    
+
+
+
+<div id="verifyContent" data-bind="template:{name:'detailContentTemplate', afterRender: VerifyContentTemplateRenderComplete}"></div>
+<script type="text/html" id="detailContentTemplate">
+    <div class="ibox">
+        <div class="ibox-title">
+            <h3>
+                
+                <small>You can download confirmation page</small>
+            </h3>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--ko template: {name: 'optionsTemplate'}-->
+                    <!--/ko-->
+                    
+<div class="row">
+    <div class="col-lg-8">
+        <h3>General Information</h3>
+        <div class="col-xs-12">
+            <hr />
+            <div class="col-xs-12">
+                <div class="alert alert-info">
+                    Current Status: <span data-bind="text: ApplicationStatusString"></span>
+                </div>
+            </div>
+            <!--ko if:IsWrapUpApplied-->
+            <div class="col-xs-12">
+                <div class="alert alert-info">
+                    PTAP Status: <span>PTAP application applied successfully.</span>
+                </div>
+                
+            </div>
+            <!--/ko-->
+            <!--ko if: FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0-->
+            <div class="col-xs-12">
+                <div class="form-group alert-danger">
+                    <label class="col-lg-4 control-label" style="font-size :larger">Final Score</label>
+                    <div class="col-lg-8" style="font-weight:bold">
+                        <p class="form-control-static" style="font-size :larger" data-bind="text: EntranceScore"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group  alert-danger">
+                    <label class="col-lg-4 control-label" style="font-size :larger">Merit Rank</label>
+                    <div class="col-lg-8" style="font-weight:bold">
+                        <p class="form-control-static" style="font-size :larger" data-bind="text: EntranceRank"></p>
+                    </div>
+                </div>
+            </div>
+            <!--/ko-->
+            <!--ko if:ModuleSettings.Is_Nationality_Filter_Required() == 'true'-->
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Nationality</label>
+                    <div class="col-lg-8">
+                        <span data-bind="text:NationalityName"></span>
+                    </div>
+                </div>
+            </div>
+            <!--/ko-->
+            <!--ko if: $.inArray(NationalityId().toString(), ModuleSettings.Enable_Voucher_Upload_For_Nationality_Ids().split(',')) !== -1 -->
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Symbol No</label>
+                    <div class="col-lg-8">
+                        <span data-bind="text:VoucherNo"></span>
+                    </div>
+                </div>
+            </div>
+            <!--/ko-->
+<div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Symbol No</label>
+                    <div class="col-lg-8">
+                        <span data-bind="text:VoucherNo"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Name</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: FirstName() +' '+ (MiddleName()!=null?MiddleName():'') +' ' + LastName()"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Gender</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: Gender"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Date of Birth</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: moment.utc(DateOfBirthAD()).format('YYYY-MM-DD') +' || ' + DateOfBirthBS() "></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Program</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: ProgramName"></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">GPA</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: ContactNo"></p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Category</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: EthnicityName"></p>
+                    </div>
+                </div>
+            </div>
+            <!--ko ifnot:ModuleSettings.Is_Reservation_Selection_Mode_Multiple() == 'true'-->
+            <!--ko if: EthnicityId && EthnicityId() && $.inArray(EthnicityId().toString(), ModuleSettings.External_Entrance_Score_Allowed_Ethnicity_Ids().split(',')) !== -1 -->
+            <div class="form-group">
+                <label class="col-lg-4 control-label">External Entrance Score</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: ExternalEntranceScore"></p>
+                </div>
+            </div>
+            <!--/ko-->
+            <!--/ko-->
+
+            
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">School Type</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: SchoolTypeName"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h3>Address Information</h3>
+        <hr />
+        <!--ko if:NationalityId() == 1-->
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">District</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: DistrictName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Local Level</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: LocalLevelName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Ward No</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: WardNo"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+        <!--ko if:NationalityId() != 1-->
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Country</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: CountryName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Full Address</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: FullAddressSpecify"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+        
+        <!--ko foreach: Qualifications-->
+        <div class="hr-line-dashed"></div>
+        <div data-bind="template:{name: 'qualificationEditRowTemplate'}"></div>
+        <!--/ko-->
+        <h3>Guardian Info</h3>
+        <hr />
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Father Name</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: GuardianInfo.FatherName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Mother Name</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: GuardianInfo.MotherName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Guardian Name</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: GuardianInfo.GuardianName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Contact No</label>
+                <div class="col-lg-8">
+                    <p class="form-control-static" data-bind="text: GuardianInfo.GuardianContactNo"></p>
+                </div>
+            </div>
+        </div>
+        <!--ko if:ModuleSettings.Allow_College_Priority_Selection_EA() == 'true'-->
+        <div class="hr-line-dashed"></div>
+        <h3>College Priority</h3>
+        <div class="hr-line-dashed"></div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>College</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: CollegePriorities">
+                <!-- ko template: {name: 'collegePriorityEditTemplate'}-->
+                <!--/ko-->
+            </tbody>
+        </table>
+        <!--/ko-->
+        <!--ko if: ProgramId && ProgramId() && $.inArray(ProgramId().toString(), ModuleSettings.Disable_Council_Registration_Document_Program_Ids().split(',')) === -1-->
+        <div class="hr-line-dashed"></div>
+        <h3>Council Registration Document</h3>
+        <div class="hr-line-dashed"></div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label class="control-label">Document No</label>
+                </div>
+                <div class="col-sm-7">
+                    <span data-bind="text:CouncilRegistrationCertificateDocumentNo"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label class="control-label">Document Date</label>
+                </div>
+                <div class="col-sm-7">
+                    <span data-bind="text: CouncilRegistrationCertificateDocumentDateBS"></span> &nbsp; BS
+                    <br />
+                    <span data-bind="text: CouncilRegistrationCertificateDocumentDate"></span> &nbsp; AD
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+        <!--ko if:ModuleSettings.Allow_Proposed_Exam_Center_Selection() == 'true'-->
+        <h3>Preferred Exam Center</h3>
+        <div class="hr-line-dashed"></div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-lg-4 control-label">Preferred Exam Center</label>
+                <div class="col-lg-8">
+                    <span data-bind="text:PreferredExamCenterName"></span>
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+        <!--ko if:IsExperienceRequired-->
+        <!--ko if: $.inArray(NationalityId().toString(), ModuleSettings.Enable_Experience_Nationality_Ids().split(',')) !== -1-->
+        <div class="hr-line-dashed"></div>
+        <h3>Experience Info</h3>
+        <!--ko template:{name:'experienceTemplate'}-->
+        <!--/ko-->
+        <!--/ko-->
+        <!--/ko-->
+
+    </div>
+    <div class="col-lg-4 documents">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>Notifications <span data-bind="text:  Notifications().length"></span></h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <ul>
+                    <!--ko foreach: Notifications-->
+                    <li>
+                        <span data-bind="text: moment(Timestamp()).format('YYYY-MM-DD HH:mm')"></span>
+                        <br />
+                        <span data-bind="attr:{title: NotificationType()}"> <i class="fa" data-bind="attr:{class: NotificationType() == 'SMS' ? 'fa fa-comment' : NotificationType() == 'Email'? 'fa fa-inbox': 'fa fa-bell'}"></i> <span data-bind="text:  Content"></span></span>
+                    </li>
+                    <!--/ko-->
+                </ul>
+            </div>
+        </div>
+
+        <h3>Document Upload</h3>
+        <hr />
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-xs-12 control-label">Photo Document</label>
+                <div class="col-lg-8">
+                    <!--ko if: PhotoDocumentContent != null-->
+                    <a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+PhotoDocumentContent.Base64Data()}" data-caption="Photo Document">
+                        <img class="img-responsive" name="PhotoDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+PhotoDocumentContent.Base64Data()}" />
+                    </a>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-xs-12 control-label">SEE Gradesheet </label>
+
+                <div class="col-lg-8">
+                    <!--ko if :SLCCertificateDocumentContent != null-->
+                    <a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+SLCCertificateDocumentContent.Base64Data()}" data-caption="SEE Character Certificate">
+                        <img class="img-responsive" name="SLCCertificateDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+SLCCertificateDocumentContent.Base64Data()}" />
+                    </a>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-xs-12 control-label">Signature Scan Document</label>
+                <div class="col-lg-8">
+                    <!--ko if :SignatureScanDocumentContent != null-->
+                    <a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+SignatureScanDocumentContent.Base64Data()}" data-caption="Signature Document">
+                        <img class="img-responsive" name="SignatureScanDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+SignatureScanDocumentContent.Base64Data()}" />
+                    </a>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-xs-12">
+    <div class="form-group">
+        <label class="col-xs-12 control-label">Release Document</label>
+        <div class="col-lg-8">-->
+        <!--ko if :EthnicityDocumentContent != null-->
+        <!--<a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+EthnicityDocumentContent.Base64Data()}" data-caption="Ethnicity Document">
+        <img class="img-responsive" name="EthnicityDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+EthnicityDocumentContent.Base64Data()}" />
+    </a>-->
+        <!--/ko-->
+        <!--</div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="col-xs-12 control-label">Council Registration Document</label>
+            <div class="col-lg-8">-->
+        <!--ko if :CouncilRegistrationDocumentContent != null-->
+        <!--<a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+CouncilRegistrationDocumentContent.Base64Data()}" data-caption="">
+        <img class="img-responsive" name="CouncilRegistrationDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+CouncilRegistrationDocumentContent.Base64Data()}" />
+    </a>-->
+        <!--/ko-->
+        <!--</div>
+        </div>
+    </div>-->
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-xs-12 control-label">Government School Document</label>
+
+                <div class="col-lg-8">
+                    <!--ko if :GovernmentSchoolDocumentContent != null-->
+                    <a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+GovernmentSchoolDocumentContent.Base64Data()}" data-caption="Government School Document">
+                        <img class="img-responsive" name="GovernmentSchoolDocumentContent" data-bind="attr: {src: 'data:image/png;base64,'+GovernmentSchoolDocumentContent.Base64Data()}" />
+                    </a>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <!--ko foreach: Ethnicities-->
+        <!--ko template:{name :'ethnicGroupDocumentTemplate', afterRender: $root.EthnicityDocumentRenderComplete }-->
+        <!--/ko-->
+        <!--/ko-->
+    </div>
+
+</div>
+<script type="text/html" id="qualificationEditRowTemplate">
+    <h4>
+        <strong data-bind="text: $index() +1 "></strong>. &nbsp;&nbsp; <span data-bind="text:  PreviousProgramName"></span>
+    </h4>
+    <div class="col-xs-12">
+        
+        <div class="form-horizontal">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Board/University</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: InstituteName"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-horizontal">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Passed Year</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: PassedYear"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Symbol No</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: SymbolNo"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Percentage</label>
+                    <div class="col-lg-8">
+                        <p class="form-control-static" data-bind="text: Percentage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Document</label>
+                    <div class="col-lg-8">
+                        <a href="javascript:void(0)" data-bind="attr:{href:DocumentId && DocumentId() > 0 ? ($parent.IsFromAdmin && $parent.IsFromAdmin() == true ?'/Registration/Verify/DownloadAttachment/'+ DocumentId() : '/Registration/Application/DownloadAttachment/'+ AttachmentDocumentContent.Guid()): 'javascript:void(0)'}, text:AttachmentDocumentContent.DocumentName" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="ethnicGroupDocumentTemplate">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="col-xs-12 control-label" data-bind="text: UploadRemarks"></label>
+            <div class="col-lg-8">
+                <!--ko if :Base64Data != null && Base64Data() != null && Base64Data() != ''-->
+                <a href="javascript:void(0)" class="popup-link" data-bind="attr:{href: 'data:image/png;base64,'+Base64Data()}" data-caption="">
+                    <img class="img-responsive" data-bind="attr: {src: 'data:image/png;base64,'+Base64Data()}" />
+                </a>
+                <!--/ko-->
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="collegePriorityEditTemplate">
+    <tr>
+        <td><span data-bind="text:PriorityOrder"></span></td>
+        <td>
+            <span data-bind="text: CollegeName"></span>
+        </td>
+    </tr>
+</script>
+<script type="text/html" id="experienceTemplate">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Organization Name</th>
+                <th>Work Location</th>
+                <th>Designation</th>
+                <th>Date From</th>
+                <th>Date To</th>
+                <th>Attachment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--ko foreach: Experiences-->
+            <!--ko template: {name: 'experienceRowTemplate'}-->
+            <!--/ko-->
+            <!--/ko-->
+        </tbody>
+    </table>
+</script>
+<script type="text/html" id="experienceRowTemplate">
+    <tr>
+        <td><span data-bind="text: $index() + 1"></span></td>
+        <td>
+            <span data-bind="text:OrganizationName"></span>
+        </td>
+        <td>
+            <span data-bind="text:WorkLocationName"></span>
+        </td>
+        <td>
+            <span data-bind="text:Designation"></span>
+        </td>
+        <td>
+            <span data-bind="text:FromDateBS"></span>
+        </td>
+        <td>
+            <span data-bind="text:ToDateBS"></span>
+        </td>
+        <td>
+            <a href="javascript:void(0)" data-bind="attr:{href:AttachmentDocumentId && AttachmentDocumentId() > 0 ? ($parent.IsFromAdmin && $parent.IsFromAdmin() == true ?'/Registration/Verify/DownloadAttachment/'+ AttachmentDocumentId() : '/Registration/Application/DownloadAttachment/'+ AttachmentDocumentContent.Guid()): 'javascript:void(0)'}, text:AttachmentDocumentContent.DocumentName" target="_blank"></a>
+        </td>
+    </tr>
+</script>
+                    <!--ko template: {name: 'optionsTemplate'}-->
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/html" id="optionsTemplate">
+    <div class="row">
+        <div class="text-right col-xs-12">
+
+            <div class="btn-group">
+
+
+                <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && StudentRegistrationId && StudentRegistrationId() && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0-->
+                
+                <!--/ko-->
+                <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && StudentRegistrationId && StudentRegistrationId() && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0 && AdmissionVerifiedBy() && AdmissionVerifiedBy && AdmissionVerifiedBy().length>0-->
+                
+                <!--/ko-->
+                <!--ko if:IsEligibleForCollegePriority && IsEligibleForCollegePriority() == true && moment(emis.registrationApplication.ViewModel.VerifyApplicationVM.ModuleSettings.EA_College_Priority_Set_Date_Range_End()) >= moment(new Date()) && moment(emis.registrationApplication.ViewModel.VerifyApplicationVM.ModuleSettings.EA_College_Priority_Set_Date_Range_Start()) <= moment(new Date()) -->
+                <a href="/Registration/Application/CollegePriority" class="btn btn-primary btn-sm pull-right">Set College Priority</a>
+                <!--/ko-->
+                <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved -->
+                
+                <!--/ko-->
+                <!--ko if:IsEligibleForCollegePriority && IsEligibleForCollegePriority() == true && ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0-->
+                <a class="btn btn-primary btn-sm pull-right" href="/Registration/Application/AdmissionListOpt">&nbsp; Set Nomination</a>
+                
+                <!--/ko-->
+                <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && StudentRegistrationId && StudentRegistrationId() && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0-->
+                
+                <!--/ko-->
+                <!--ko if:IsEligibleForwrapup -->
+                <a href="javascript:void(0)" data-bind="click: SetWrapUpAdmission" class="btn btn-primary pull-left"> &nbsp;Apply for Wrap-up Matching</a>
+                <!--/ko-->
+                <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" aria-expanded="false">&nbsp;&nbsp;Download Options</button>
+                <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; top: 32px; left: 0px; will-change: top, left;">
+                    <li><a class="dropdown-item" href="javascript:void(0)" data-bind="click:DownloadConfirmationPageClick"><i class="fa fa-download"></i> &nbsp; Download Confirmation Page</a></li>
+                    <!--ko if: ExamSessionName && ExamSessionName() && ExamSessionName() != '' && ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && FormNo && FormNo() && FormNo().length > 0 -->
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="javascript:void(0)" data-bind="click:DownloadAdmitCardClick"><i class="fa fa-download"></i> &nbsp;Download Admit Card</a></li>
+                    <!--/ko-->
+                    <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0-->
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="javascript:void(0)" data-bind="click:DownloadScoreCardClick"><i class="fa fa-download"></i> &nbsp; Download Score Card</a></li>
+                    
+                    <!--/ko-->
+                    <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && FormNo && FormNo() && FormNo().length > 0-->
+                    <li class="dropdown-divider"></li>
+                    <!--ko if:IsEligibleForCollegePriority && IsEligibleForCollegePriority() == true && moment(emis.registrationApplication.ViewModel.VerifyApplicationVM.ModuleSettings.EA_College_Priority_Set_Date_Range_End()) >= moment(new Date()) && moment(emis.registrationApplication.ViewModel.VerifyApplicationVM.ModuleSettings.EA_College_Priority_Set_Date_Range_Start()) <= moment(new Date()) -->
+                    <li><a class="dropdown-item" href="/Registration/Application/CollegePriority"><i class="fa fa-link"></i> &nbsp;Set College Priority</a></li>
+                    <!--/ko-->
+                    <!--ko if:IsEligibleForwrapup -->
+                    <li><a class="dropdown-item" href="javascript:void(0)" data-bind="click: SetWrapUpAdmission"><i class="fa fa-link"></i> &nbsp;Set WrapUp Admission</a></li>
+                    <!--/ko-->
+                    <!--ko if: moment(CollegePrioritySetEndDate()) < moment(new Date())-->
+                    <li><a class="dropdown-item" href="javascript:void(0)" data-bind="click:DownloadCollegePriorityConfirmationClick"><i class="fa fa-download"></i> &nbsp;Download College Priority Confirmation Page</a></li>
+                    <!--/ko-->
+                    <!--/ko-->
+                    <!--ko if: ApplicationStatus() == emis.registrationApplication.ApplicationStatuses.Approved && StudentRegistrationId && StudentRegistrationId() && FormNo && FormNo() && FormNo().length > 0 && EntranceScore && EntranceScore() && EntranceScore().length > 0 && EntranceRank && EntranceRank() && EntranceRank() > 0-->
+                    <li class="dropdown-divider"></li>
+                    <!-- ko if: IsAdmissionConfirmed() === true-->
+                    <li><a class="dropdown-item" href="/Registration/Application/AdmittedConfirmationPage" target="_blank" data-bind="click:"><i class="fa fa-download"></i> &nbsp;Download Admitted Confirmation Page</a></li>
+                    <!--/ko-->
+                    <!--/ko-->
+
+                </ul>
+
+            </div>
+
+           
+
+            <div class="hr-line-dashed"></div>
+        </div>
+    </div>
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="/bundles/jquery?v=DZaSeYrr-bg68m2t6f4ZRXZRG00JSxzfl0ce6QGdT_g1"></script>
+
+    <script src="/bundles/knockout?v=YUps1fd6WjCTMrDcVQSDzAN8DhvG29bpTwB0HcuYopo1"></script>
+
+    <script type="text/javascript" src="/assets/js/emis/emis.namespace.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="/bundles/application?v=OIGFv0HFLh_YszM3Z_qMF7D0V9dfqt6xTbseBKnhFYA1"></script>
+
+
+    <script src="/bundles/toaster?v=BIySuqL_7HdhaPsyLya4KU_PYL5SATOaU5u9Sc8-5f81"></script>
+
+
+    <script>
+        function showMessage(title, message, event, closedEventHandler, type) {
+            if (title != null && message != null) {
+                setTimeout(function () {
+                    if (type == 'swal') {
+                        swal(title, message, event);
+                    } else {
+                        toastr.options = {
+                            closeButton: true,
+                            progressBar: true,
+                            showMethod: 'slideDown',
+                            timeOut: 4000,
+                            onHidden: closedEventHandler
+                        };
+                        switch (event) {
+                            case 'success':
+                                toastr.success(message, title);
+                                break;
+                            case 'error':
+                                toastr.error(message, title);
+                                break;
+                            default:
+                                toastr.info(message, title);
+                                break;
+                        }
+                    }
+
+                }, 1000);
+
+            }
+        }
+    </script>
+    <script src="/bundles/basic?v=6IryC5WzkkXLV4-QwiqF1qDxy0hFwx2CG9TWJCu-jYc1"></script>
+
+    <!-- Data picker -->
+    <script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/assets/js/plugins/datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="/assets/js/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="/bundles/jqueryval?v=hEGG8cMxk9p0ncdRUOJ-CnKN7NezhnPnWIvn6REucZo1"></script>
+
+    <script type="text/javascript">
+        function MaintainDatePicker() {
+            $('.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true,
+            }).on('changeDate', function (ev) {
+                $(this).trigger('change');
+                $(this).trigger('blur');
+            });;;
+        }
+
+        $(function () {
+            jQuery.validator.setDefaults({
+                focusInvalid: false,
+                invalidHandler: function (event, validator) {
+                    if (!validator.numberOfInvalids())
+                        return;
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: $(validator.errorList[0].element).offset().top - 284
+                    }, 1000);
+                    toastr.options = {
+                    }
+                    toastr.error("Please fill in the highlighted fields");
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    if (element.attr("type") == "radio" || element.attr("type") == "checkbox")
+                        error.insertAfter($(element).parent().parent()[0]);
+                    else
+                        error.insertAfter(element);
+                }
+            });
+
+            MaintainDatePicker();
+        });
+    </script>
+    <!-- d3 and c3 charts -->
+    <script src="/assets/js/plugins/d3/d3.min.js"></script>
+    <script src="/assets/js/plugins/c3/c3.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/emis/emis.registrationApplication.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            emis.registrationApplication.InitializeVerify();
+        });
+    </script>
+
+</body>
+</html>

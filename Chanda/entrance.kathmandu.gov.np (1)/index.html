@@ -1,0 +1,392 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Scholarship Entrance Examination (SEE)</title>
+    <link href="/Content/css?v=6hiULMlNwKuxr0P2Ye9Q7QUK0YoUxIyG-1WCeiyW1D81" rel="stylesheet"/>
+
+    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <!-- Date Picker-->
+    <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style>
+        .wrapper {
+            padding: 0px;
+        }
+
+        .wrapper-content {
+            padding: 0px 0px;
+        }
+
+        .top-navigation .wrapper.wrapper-content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="top-navigation">
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <div class="wrapper wrapper-content">
+                <div class="container">
+                    <div class="col-xs-12 wrapper border-bottom white-bg page-heading">
+                        <div class="wrapper border-bottom white-bg page-heading">
+
+                            <div class="text-center col-md-2 col-sm-12">
+                                <img src="/assets/img/logo.png" style="max-height: 110px">
+                            </div>
+                            <div class="col-md-8 col-sm-12" style="text-align:center">
+                                <h2 style="margin-top: 15px;"> 
+<span>Kathmandu Metropolitan City</span>
+</h2>
+                                <h1 style="margin-top: 10px;">
+<span><b>Office of Municipal Executive, Bagmati Province</b></span>
+</h1>
+                                <h3 style="">
+Kathmandu, Nepal
+</h3>
+                            </div>
+                            <div class="text-center col-md-2 col-sm-12">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 wrapper border-bottom white-bg page-heading">
+                        <nav class="navbar navbar-static-top" role="navigation">
+                            <div class="navbar-header">
+                                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                    <i class="fa fa-reorder"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse" id="navbar" style="background-color:#171c45">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/">Home</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li><a target="_blank" href="/Download?fileName=community_school.pdf">Community School Format</a></li>
+     				  <li><a target="_blank" href="/Download?fileName=privatescholar.pdf">Private School (Scholarship)</a></li>
+                                    
+                                    
+                                </ul>
+                                <ul class="nav navbar-right">
+                                    <li class="dropdown">
+                                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> About <span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                            <li><a href="/AboutUs"><i class="fa fa-building"></i> About Us</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+
+                    </div>
+                    
+
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h2>Scholarship Examination Application Form</h2>
+ 			
+                    </div>
+                   
+                    <div class="ibox-content countdown-container">
+                        <h2 style="color:maroon" class="no-margins">Time Left for Registration: <span id="countdown"></span><br /> </h2>
+                    </div>
+                    <div class="ibox-content ">
+                        <div class="row">
+                         <!--   <a href="/Registration/Instruction" class="btn btn-primary pull-right">Start Registration</a> -->
+                        </div>
+
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <h3 class="no-margins"><br />Please go to check your status download your admit card</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h2>Check your Status </h2>
+                    </div>
+                    <div class="ibox-content">
+                        <h3 class="no-margins">Click here to EDIT/VIEW  your application status if you have saved it.</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            
+
+                            <a href="/Registration/Application/CheckStatus" class="btn btn-primary pull-right">Check Your Status/GET YOUR ADMIT CARD</a>
+                        </div>
+                       
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-title">
+            </div>
+            <div class="ibox-content">
+                <div class="row m-b-sm m-t-sm">
+                    <div class="col-md-1">
+                        <button type="button" id="btnRefresh" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                    </div>
+                    <div class="col-md-11">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search" class="input-sm form-control" id="searchContent">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary" id="btnSearch"> Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-list">
+                    <div id="result">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Notice Title</th>
+                <th>Published Date</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>छात्रवृत्ति परिक्षाको फाराम भर्ने म्याद थप सम्बन्धमा</td>
+                        <td>7/28/2023</td>
+                        <td>
+                            <a href="/Notices/Detail/1024" class="btn btn-warning btn-xs"><i class="fa fa-database"></i> &nbsp; View Detail</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>कक्षा ११ को छात्रवृत्ति परीक्षामा सामेल हुन अनलाईन आवेदन दिएकाहरुलाई अनुरोध </td>
+                        <td>7/25/2023</td>
+                        <td>
+                            <a href="/Notices/Detail/1023" class="btn btn-warning btn-xs"><i class="fa fa-database"></i> &nbsp; View Detail</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>कक्षा ११ मा छात्रवृत्तिमा अध्ययन गर्न चाहने विद्यार्थीको लागि छात्रवृति परीक्षाको अनलाइन आवेदन फाराम भर्नेसम्बन्धी अत्यन्त जरुरी सूचना !</td>
+                        <td>7/13/2023</td>
+                        <td>
+                            <a href="/Notices/Detail/1022" class="btn btn-warning btn-xs"><i class="fa fa-database"></i> &nbsp; View Detail</a>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="5">
+                 &nbsp;   
+
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="/bundles/jquery?v=DZaSeYrr-bg68m2t6f4ZRXZRG00JSxzfl0ce6QGdT_g1"></script>
+
+    <script src="/bundles/knockout?v=YUps1fd6WjCTMrDcVQSDzAN8DhvG29bpTwB0HcuYopo1"></script>
+
+    <script type="text/javascript" src="/assets/js/emis/emis.namespace.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="/bundles/application?v=OIGFv0HFLh_YszM3Z_qMF7D0V9dfqt6xTbseBKnhFYA1"></script>
+
+
+    <script src="/bundles/toaster?v=BIySuqL_7HdhaPsyLya4KU_PYL5SATOaU5u9Sc8-5f81"></script>
+
+
+    <script>
+        function showMessage(title, message, event, closedEventHandler, type) {
+            if (title != null && message != null) {
+                setTimeout(function () {
+                    if (type == 'swal') {
+                        swal(title, message, event);
+                    } else {
+                        toastr.options = {
+                            closeButton: true,
+                            progressBar: true,
+                            showMethod: 'slideDown',
+                            timeOut: 4000,
+                            onHidden: closedEventHandler
+                        };
+                        switch (event) {
+                            case 'success':
+                                toastr.success(message, title);
+                                break;
+                            case 'error':
+                                toastr.error(message, title);
+                                break;
+                            default:
+                                toastr.info(message, title);
+                                break;
+                        }
+                    }
+
+                }, 1000);
+
+            }
+        }
+    </script>
+    <script src="/bundles/basic?v=6IryC5WzkkXLV4-QwiqF1qDxy0hFwx2CG9TWJCu-jYc1"></script>
+
+    <!-- Data picker -->
+    <script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/assets/js/plugins/datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="/assets/js/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="/bundles/jqueryval?v=hEGG8cMxk9p0ncdRUOJ-CnKN7NezhnPnWIvn6REucZo1"></script>
+
+    <script type="text/javascript">
+        function MaintainDatePicker() {
+            $('.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true,
+            }).on('changeDate', function (ev) {
+                $(this).trigger('change');
+                $(this).trigger('blur');
+            });;;
+        }
+
+        $(function () {
+            jQuery.validator.setDefaults({
+                focusInvalid: false,
+                invalidHandler: function (event, validator) {
+                    if (!validator.numberOfInvalids())
+                        return;
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: $(validator.errorList[0].element).offset().top - 284
+                    }, 1000);
+                    toastr.options = {
+                    }
+                    toastr.error("Please fill in the highlighted fields");
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    if (element.attr("type") == "radio" || element.attr("type") == "checkbox")
+                        error.insertAfter($(element).parent().parent()[0]);
+                    else
+                        error.insertAfter(element);
+                }
+            });
+
+            MaintainDatePicker();
+        });
+    </script>
+    <!-- d3 and c3 charts -->
+    <script src="/assets/js/plugins/d3/d3.min.js"></script>
+    <script src="/assets/js/plugins/c3/c3.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            //swal('NOTICE', 'THIS IS TO NOTIFY THAT DUE TO INTERIM STAY ORDER RECEIVED FROM THE HONORABLE SUPREME COURT, THE COMMON PG ENTRANCE EXAMINATION OF MEDICAL EDUCATION COMMISSION SCHEDULED TO BE HELD ON 13,14 AND 15 OCTOBER 2020 IS POSTPONED UNTIL FURTHER NOTICE.', 'info');
+            $.fn.pagination({
+                pageChanged: function (index, column, dir) {
+                    loadData(index, column, dir);
+                },
+                sorting: function (index, column, dir) {
+                    loadData(index, column, dir);
+                }
+            });
+            $('#btnRefresh').click(function () {
+                $('#searchContent').val('');
+                loadData(1);
+            });
+            $('#btnSearch').click(function () {
+                loadData(1);
+            });
+            $('#searchContent').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    //
+                    loadData(1);
+                }
+            });
+
+            //
+            var isTimeRemaining = 'False';
+            if (isTimeRemaining.toLowerCase() == "true") {
+                var countDownDate = new Date('').getTime();
+                var now = new Date('').getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+
+                    // Get today's date and time
+                    now = now + 1000;
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="demo"
+              <!--      $("span#countdown").html(days + "d " + hours + "h "+ minutes + "m " + seconds + "s ");-->
+
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        $("span#countdown").html("EXPIRED");
+                    }
+                }, 1000);
+            } else {
+                $('.countdown-container').hide();
+            }
+        });
+
+        function loadData(index, column, dir) {
+            var data = { Page: index, SortColumn: column, Direction: dir, noticeTitle: $('#searchContent').val() };
+            var url = '/';
+            postJSON(url, data, function (resp) {
+                $("#result").html(resp.Data);
+            });
+        }
+    </script>
+
+</body>
+</html>
